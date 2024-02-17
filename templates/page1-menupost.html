@@ -1,0 +1,36 @@
+{% load static %}
+<div class="ourMenu-post">
+    <div class="ourMenu-post__tag">
+        <h4 class="ourMenu-post__tag-text">OUR MENU</h4><a name="MenuAnchor"></a>
+        <img src="{% static 'img/Line.svg' %}" alt="" srcset="">
+    </div>
+    <div class="ourMenu-post__slogan">
+        <h1 class="ourMenu-post__slogan-title">Discover our menu chart</h1>
+        <p class="ourMenu__slogan-text">Through True Rich Attended does no end it his mother since
+            favourable real had half every him case in packages enquire we up ecstatic.. Through True
+            Rich Attended does no end it his mother</p>
+    </div>
+    <div class="ourMenu-post__name">
+        <h5 class="ourMenu-post__name-text">Most Popular Picks</h5>
+    </div>
+    <div class="ourMenu-post__grid-container">
+        {% for el in food %}
+        <div class="ourMenu-post__grid-container-item">
+            <a href="{% url 'main:food_detail' el.id %}"><img src="{{el.image.url}}" alt="" srcset=""></a>
+            <div class="ourMenu-post__grid-container-item-text">
+                <h6 class="ourMenu-post__grid-container-item-name">{{ el.name }}</h6>
+                <h6 class="ourMenu-post__grid-container-item-price">${{ el.price }}</h6>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+    <div class="ourMenu-post__button">
+        <button class="viewMenu" onclick="document.location='{% url 'main:menu' %}'">
+            <div class="viewMenu__inner">
+                <p class="viewMenu__inner-text">View Menu</p>
+                <img class="viewMenu__arrow" src="{% static 'img/MenuArrow.svg' %}" alt="" srcset="">
+            </div>
+        </button>
+    </div>
+</div>

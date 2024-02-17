@@ -1,0 +1,143 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="about-menu-post">
+        <div class="knowMore-post__textBlock">
+            <div class="knowMore-post__tag">
+                <h4 class="knowMore-post__tag-text">KNOW MORE ABOUT US</h4>
+                <img src="{% static 'img/Line.svg' %}" alt="" srcset="">
+            </div>
+            <div class="knowMore-post__slogan">
+                <ul class="knowMore-post__slogan-list">
+                    <li class="knowMore-post__slogan-item-title">
+                        <h1 class="knowMore-post__slogan-title">
+                            Creator info
+                        </h1>
+                    </li>
+                </ul>
+            </div>
+            <div class="about__menu-list-block">
+                <ol class="about__menu-list" type="1">
+                    <li class="header-post__info-item-title">
+                        <h6 class="header-post__info-item-title">Myself</h6>
+                        <ul style="list-style-type: disc" class="about__menu-list-ul">
+                            <li>
+                                <div class="quote-post__person">
+                                    <ul class="quote-post__person-name-list">
+                                        <li class="quote-post__person-name">
+                                            <h6 class="quote-post__person-name-text">{{me.name}}</h6>
+                                        </li>
+                                        <li class="quote-post__person-place">
+                                            <p class="quote-post__person-place-text">{{me.status}}</p>
+                                        </li>
+                                    </ul>
+                                    <img style="border-radius:100px; width:50px" src={{me.photo}} alt="" srcset="">
+                                </div>
+                            </li>
+                            <ul class="about__menu-list-ul">
+                                <li style="list-style-type: circle" class="header-post__info-item-text">Email: {{me.email}}</li>
+                                <li style="list-style-type: circle" class="header-post__info-item-text">Phone: {{me.phone}}</li>
+                            </ul>
+                        </ul>
+                    </li>
+
+                    <li class="header-post__info-item-title">
+                        <h6 class="header-post__info-item-title">Program</h6>
+                        <ul style="list-style-type: '◈'; width:436px" class="about__menu-list-ul">
+                            <li class="header-post__info-item-text" style="padding-bottom: 22px">Название ОП: {{program.name}}</li>
+                            <li class="header-post__info-item-text" style="padding-bottom: 22px">Описание ОП: <br>{{program.discription}}</li>
+
+                            <li>
+                                <div class="quote-post__person">
+                                    <ul class="quote-post__person-name-list">
+                                        <li class="quote-post__person-name">
+                                            <h6 class="quote-post__person-name-text">{{program.head.name}}</h6>
+                                        </li>
+                                        <li class="quote-post__person-place">
+                                            <p class="quote-post__person-place-text">{{program.head.status}}</p>
+                                        </li>
+                                    </ul>
+                                    <img style="border-radius:100px; width:50px" src={{program.head.photo}} alt="" srcset="">
+                                </div>
+                            </li>
+
+                            <ul class="about__menu-list-ul">
+                                <li style="list-style-type: circle" class="header-post__info-item-text">Email: {{program.head.email}}</li>
+                            </ul>
+                            <li>
+                                <div class="quote-post__person">
+                                    <ul class="quote-post__person-name-list">
+                                        <li class="quote-post__person-name">
+                                            <h6 class="quote-post__person-name-text">{{program.manager.name}}</h6>
+                                        </li>
+                                        <li class="quote-post__person-place">
+                                            <p class="quote-post__person-place-text">{{program.manager.status}}</p>
+                                        </li>
+                                    </ul>
+                                    <img style="border-radius:100px; width:50px" src={{program.manager.photo}} alt="" srcset="">
+                                </div>
+                            </li>
+                            <ul class="about__menu-list-ul">
+                                <li style="list-style-type: circle" class="header-post__info-item-text">Email: {{program.manager.email}}</li>
+                            </ul>
+
+                        </ul>
+                    </li>
+
+                    <li class="header-post__info-item-title">
+                        <h6 class="header-post__info-item-title">Students</h6>
+                        <ul style="list-style-type: '◈'" class="about__menu-list-ul">
+                            <li>
+                                <div class="quote-post__person">
+                                    <ul class="quote-post__person-name-list">
+                                        <li class="quote-post__person-name">
+                                            <h6 class="quote-post__person-name-text">{{students.stud_1.name}}</h6>
+                                        </li>
+                                        <li class="quote-post__person-place">
+                                            <p class="quote-post__person-place-text">{{students.stud_1.status}}</p>
+                                        </li>
+                                    </ul>
+                                    <img style="border-radius:100px; width:50px" src={{students.stud_1.photo}} alt="" srcset="">
+                                </div>
+                            </li>
+                            <ul class="about__menu-list-ul">
+                                <li style="list-style-type: circle" class="header-post__info-item-text">Email: {{students.stud_1.email}}</li>
+                                <li style="list-style-type: circle" class="header-post__info-item-text">Phone: {{students.stud_1.phone}}</li>
+                            </ul>
+
+                            <li>
+                                <div class="quote-post__person">
+                                    <ul class="quote-post__person-name-list">
+                                        <li class="quote-post__person-name">
+                                            <h6 class="quote-post__person-name-text">{{students.stud_2.name}}</h6>
+                                        </li>
+                                        <li class="quote-post__person-place">
+                                            <p class="quote-post__person-place-text">{{students.stud_2.status}}</p>
+                                        </li>
+                                    </ul>
+                                    <img style="border-radius:100px; width:50px" src={{students.stud_2.photo}} alt="" srcset="">
+                                </div>
+                            </li>
+                            <ul class="about__menu-list-ul">
+                                <li style="list-style-type: circle" class="header-post__info-item-text">Email: {{students.stud_2.email}}</li>
+                                <li style="list-style-type: circle" class="header-post__info-item-text">Phone: {{students.stud_2.phone}}</li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="knowMore-post__pics">
+            <div class="knowMore-post__1pic">
+                <img src="{% static 'img/About us Image 1.png' %}" alt="Coffee Making" title="Coffee Making"
+                    srcset="">
+            </div>
+            <div class="knowMore-post__2pic">
+                <img src="{% static 'img/About us Image 2.png' %}" alt="Person" title="Person in the Cafe" srcset="">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

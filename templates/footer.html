@@ -1,0 +1,70 @@
+{% load static%}
+<footer class="footer">
+    <div class="container">
+        <div class="footer__contact">
+            <div class="footer__text">
+                <ul class="footer__contact-list">
+                    <li class="footer__contact-list-title">
+                        <h4>Working Hour</h4>
+                    </li>
+                    <li class="footer_contact-list-text">
+                        <p>Sunday to Saturday<br>
+                            09:00 AM to 11:00 PM</p>
+                    </li>
+                </ul>
+                <ul class="footer__contact-list">
+                    <li class="footer__contact-list-title">
+                        <h4>Location</h4>
+                    </li>
+                    <li class="footer_contact-list-text">
+                        <p>Street - 127, New York,<br>
+                            United States<br>
+                            546544</p>
+                    </li>
+                </ul>
+                <ul class="footer__contact-list">
+                    <li class="footer__contact-list-title">
+                        <h4>Contact us</h4>
+                    </li>
+                    <li class="footer_contact-list-text">
+                        <p>+123456789 <br>
+                            hey@yourdomain.com</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="map">
+                <img src="{% static 'img/Map.svg' %}" alt="" class="footer__map">
+            </div>
+        </div>
+        <div class="footer__copiright">
+            <p>© 2021 Finsweet | All rights reserved. <a name="socialAnchor"></a></p>
+            <ul class="social-list">
+                <li class="social-items">
+                    <a href="https://ru.m.wikipedia.org/wiki/Facebook" target="_blank" class="social-links">
+                        <img src="{% static 'img/FacebookIcon.svg' %}" alt="" srcset="">
+                    </a>
+                </li>
+                <li class="social-items">
+                    <a href="https://en.wikipedia.org/wiki/Twitter" target="_blank" class="social-links">
+                        <img src="{% static 'img/TwitterIcon.svg' %}" alt="" srcset="">
+                    </a>
+                </li>
+                <li class="social-items">
+                    <a href="https://en.wikipedia.org/wiki/Instagram" target="_blank" class="social-links">
+                        <img src="{% static 'img/InstaIcon.svg' %}" alt="" srcset="">
+                    </a>
+                </li>
+                <li class="social-items">
+                    <a href="./images/Map.png" target="_blank" class="social-links">
+                        <img src="{% static 'img/LimkedInIcon.svg' %}" alt="" srcset="">
+                    </a>
+                </li>
+            </ul>
+            <div class="contact-button-box">
+                <a href="{% url 'main:qform' %}" class="contact-button">Contact us</a>
+                <img src="{% static 'img/ArrowIcon.svg' %}" alt="" srcset="">
+            </div>
+            <p class="warning">*Компания Meta - признана экстремисткой, запрещена в РФ</p>
+        </div>
+    </div>
+</footer>

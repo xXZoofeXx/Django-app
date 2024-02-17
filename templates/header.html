@@ -1,0 +1,35 @@
+{% load static %}
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <a class="logo" href="{% url 'main:home' %}">
+                <img src="{% static 'img/Logo.svg' %}" alt="logo">
+            </a>
+            <nav class="menu">
+                <ul class="menu__list" id="headerLinkContainer">
+                    <li class="menu__list-item {% if request.resolver_match.view_name  == 'main:home' %}menu__list-item_active{% endif %}">
+                        <a class="menu__list-link" href="{% url 'main:home' %}">Home</a>
+                    </li>
+                    <li class="menu__list-item {% if request.resolver_match.view_name  == 'main:menu' %}menu__list-item_active{% endif %}">
+                        <a class="menu__list-link" href="{% url 'main:menu' %}">Menu</a>
+                    </li>
+                    <li class="menu__list-item {% if request.resolver_match.view_name  == 'main:about' %}menu__list-item_active{% endif %}">
+                        <a class="menu__list-link" href="{% url 'main:about' %}">About us</a>
+                    </li>
+                    <li class="menu__list-item {% if request.resolver_match.view_name  == 'main:story' %}menu__list-item_active{% endif %}">
+                        <a class="menu__list-link" href="{% url 'main:story' %}">Our story</a>
+                    </li>
+                    <li class="menu__list-item {% if request.resolver_match.view_name  == 'main:qform' or request.resolver_match.view_name  == 'main:task' %}menu__list-item_active{% endif %}">
+                        <a class="menu__list-link" href="{% url 'main:qform' %}">Contact</a>
+                    </li>
+                    <li class="menu__list-item__new">
+                        <a class="menu__list-link" href="#socialAnchor">Socials</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="{% url 'admin:index' %}" class="social-links">
+                <img src="{% static 'img/InstaIcon.svg' %}" alt="InstIcon" srcset="">
+            </a>
+        </div>
+    </div>
+</header>

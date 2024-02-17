@@ -1,0 +1,30 @@
+{% load widget_tweaks %}
+{% load static %}
+
+<div class="contact__form-block">
+    <h2 class="contact__form-title">Task №1004</h2>
+    <p class="contact__form-text">Можно ли в квадратном зале площадью S поместить круглую сцену радиусом R так, чтобы от стены до сцены был проход не менее K?</p>
+    <div class="contact__form">
+        <form class="contact__userData-form"
+            action="" method="post"
+            target="_self">
+            {% csrf_token %}
+
+
+            {% render_field form2.s class="form-item" placeholder="Площадь" type="number" %}
+
+            {% render_field form2.r class="form-item" placeholder="Радиус" type="number" %}
+
+            {% render_field form2.k class="form-item" placeholder="Проход" type="number" %}
+            <div class="form-item"></div>
+
+            <button class="contact__form-button" type="submit">
+                <p class="sendMessage-text">Solve!</p>
+                <img class="sendMessage-arrow" src="{% static 'img/SendMessageArrow.svg' %}" alt="" srcset="">
+            </button>
+            <button class="contact__form-button" type="reset">
+                <p class="sendMessage-text">Reset</p>
+            </button>
+        </form>
+    </div>
+</div>

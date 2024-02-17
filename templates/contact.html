@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="pageNavigation-forms">
+        <ul class="pageNavigation-list-forms" id="pageNavigation-list-forms">
+            <li class="pageNavigation-item-forms {% if request.resolver_match.view_name  == 'main:qform' %}menu__list-item-forms_active{% endif %}">
+                <a href="{% url 'main:qform' %}" class="menu__list-link-forms" id="FormChoice-Question">I Have Question</a>
+            </li>
+            <li class="pageNavigation-item-forms {% if request.resolver_match.view_name  == 'main:task' %}menu__list-item-forms_active{% endif %}">
+                <a href="{% url 'main:task' %}" class="menu__list-link-forms" id="FormChoice-Trouble">Task</a>
+            </li>
+<!--            <li class="pageNavigation-item-forms">-->
+<!--                <a href="#" class="menu__list-link-forms" id="FormChoice-Order">Make Order</a>-->
+<!--            </li>-->
+        </ul>
+    </div>
+
+    <div class="contact__post">
+
+
+        {% if request.resolver_match.view_name  == 'main:qform' %}
+        {% include 'question-form.html' %}
+        {% elif request.resolver_match.view_name  == 'main:task' %}
+        {% include 'task.html' %}
+        {% elif request.resolver_match.view_name  == 'main:answer' %}
+        {% include 'answer.html' %}
+        {% endif %}
+
+
+        <div class="contact__pics">
+            <img class="contact__pics1" src="{% static 'img/Contact Image 1.png' %}" alt="Street Seats"
+                title="Street Tables" srcset="">
+            <img class="contact__pics2" src="{% static 'img/Contact Image 2.png' %}" alt="Coffe cup"
+                title="Making Coffee" srcset="">
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

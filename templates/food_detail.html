@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="header-post">
+        <div class="header-post__textBlock">
+            <div class="header-post__slogan">
+                <ul class="header-post__list">
+                    <li class="header-post-item">
+                        <h1 class="header-post-item__title">
+                            {{food.name}}
+                        </h1>
+                    </li>
+                    <li class="header-post-item">
+                        <p class="header-post-item__text">
+                            {{food.group}}
+                        </p>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="contact__userData-form" style="padding-bottom:20px">
+                <div class="form-item" style="border:none">Price</div>
+                <div class="form-item" >${{food.price}}</div>
+                <div class="form-item" style="border:none">Available</div>
+                <div class="form-item" >{{food.q}}</div>
+            </div>
+
+
+            <div class="header-post__button">
+                <button class="viewMenu" type="button" onclick="document.location='{% url 'main:menu' %}'">
+                    <div class="viewMenu__inner">
+                        <p class="viewMenu__inner-text">View Menu</p>
+                        <img class="viewMenu__arrow" src="{% static 'img/MenuArrow.svg' %}" alt="" srcset="">
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="header-post__picture">
+            <img style="width:622px" src="{{food.image.url}}" alt="Cup" title="Breakfast" srcset="">
+        </div>
+
+    </div>
+</div>
+{% endblock %}

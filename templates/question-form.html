@@ -1,0 +1,36 @@
+{% load widget_tweaks %}
+{% load static %}
+
+
+<div class="contact__form-block">
+    <h2 class="contact__form-title">Have a Question ? <br>
+        Get in Touch with us 👋</h2>
+    <p class="contact__form-text">Fill up the Form and our team will get back to within 24 hrs</p>
+    <div class="contact__form">
+        <form class="contact__userData-form"
+            action="" method="post"
+            target="_self">
+            {% csrf_token %}
+
+
+            {% render_field form1.name class="form-item" placeholder="Name" type="text" %}
+
+            {% render_field form1.second_name class="form-item" placeholder="Second Name" type="text" %}
+
+            {% render_field form1.email class="form-item" placeholder="Email" type="text" %}
+
+            {% render_field form1.phone class="form-item" placeholder="Phone" type="text" %}
+
+            {% render_field form1.text class="form-item-message" placeholder="Message" type="text" %}
+
+
+            <button class="contact__form-button" type="submit">
+                <p class="sendMessage-text">Send Message</p>
+                <img class="sendMessage-arrow" src="{% static 'img/SendMessageArrow.svg' %}" alt="" srcset="">
+            </button>
+            <button class="contact__form-button" type="reset">
+                <p class="sendMessage-text">Reset</p>
+            </button>
+        </form>
+    </div>
+</div>

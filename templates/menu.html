@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+
+    {% include 'page2-menupost.html' %}
+
+
+    <div class="Menu__btn-container">
+        <button class="btn active" onclick="document.location='{% url 'main:menu' %}'">All</button>
+        <button class="btn" onclick="document.location='{% url 'main:filter' 'Fast Food' %}'">Fast Food</button>
+        <button class="btn" onclick="document.location='{% url 'main:filter' 'Coffee' %}'">Coffee</button>
+        <button class="btn" onclick="document.location='{% url 'main:filter' 'Cocktails' %}'">Cocktails</button>
+        <button class="btn" onclick="document.location='{% url 'main:filter' 'Quafe Cake' %}'">Quafe Cake</button>
+        <button class="btn" onclick="document.location='{% url 'main:filter' 'Snacks' %}'">Snacks</button>
+    </div>
+
+    <div class="row">
+
+        {% for el in food %}
+
+        <div class="column show">
+            <div class="content">
+                <a href="{% url 'main:food_detail' el.id %}"><img src="{{el.image.url}}" style="width:395px; height:264.3px"></a>
+                <div class="menu-block-text">
+                    <h6 class="ourMenu-post__grid-container-item-name">{{ el.name }}</h6>
+                    <h6 class="ourMenu-post__grid-container-item-price">${{ el.price }}</h6>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
